@@ -4,7 +4,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <Section className="font-vietnam py-40 lg:py-40">
+    <Section className="py-40 font-vietnam lg:py-40">
       <div className="flex flex-col gap-10 md:flex-row md:gap-36">
         <div className="w-full md:w-1/2">
           <Image

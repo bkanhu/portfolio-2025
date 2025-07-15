@@ -31,7 +31,7 @@ const Footer = () => {
 
   return (
     <>
-      <Section className="font-vietnam py-8" id="contact">
+      <Section className="py-8 font-vietnam" id="contact">
         <div className="space-y-6">
           <p className="capitalize text-woodsmoke-300">Find me on</p>
           <ul className="flex gap-4">
@@ -42,7 +42,7 @@ const Footer = () => {
                   alt={`Link to ${social.name} Profile`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full p-2 text-lg text-woodsmoke-50 transition duration-300 hover:bg-brand-500 hover:text-brand-100 md:h-auto md:w-auto dark:text-brand-50"
+                  className="flex h-12 w-12 items-center justify-center rounded-full p-2 text-lg text-woodsmoke-50 transition duration-300 hover:bg-brand-500 hover:text-brand-100 dark:text-brand-50 md:h-auto md:w-auto"
                 >
                   <span className="sr-only">Link to {social.name} Profile</span>
                   {social.icon}

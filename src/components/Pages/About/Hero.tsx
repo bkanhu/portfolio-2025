@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <Section className="font-vietnam my-20 mb-28 md:px-[50px] lg:px-[258px]">
+    <Section className="my-20 mb-28 font-vietnam md:px-[50px] lg:px-[258px]">
       <div className="my-8 text-center">
         <h1 className="mb-2 text-3xl text-woodsmoke-50">About 🧔🏽</h1>
         <p className="text-woodsmoke-100">A little bit about me</p>

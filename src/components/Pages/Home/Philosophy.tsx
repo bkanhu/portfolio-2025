@@ -5,7 +5,7 @@ import React from "react";
 
 const Philosophy = () => {
   return (
-    <Section className="font-vietnam py-10 lg:py-10">
+    <Section className="py-10 font-vietnam lg:py-10">
       <p className="mb-6 text-3xl font-normal text-woodsmoke-300">
         I believe,{" "}
         <span className="font-medium text-woodsmoke-100">
