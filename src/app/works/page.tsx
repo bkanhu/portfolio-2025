@@ -13,7 +13,7 @@ const WorksPage = () => {
           imageName="Skentino Tech Image"
           title="My Works at SkentinoTech"
           role="UI Designer + Frontend"
-          link="/works/skentino-tech"
+          link="#"
         />
         <WorkCard
           imageUrl="/images/works/dishes-to-taste/thumbnail.png"

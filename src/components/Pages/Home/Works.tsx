@@ -1,9 +1,9 @@
-import WorkCard from "@/components/Pages/Works/WorkCard";
 import Section from "@/components/GlobalLayout/Section";
+import WorkCard from "@/components/Pages/Works/WorkCard";
 
 const Works = () => {
   return (
-    <Section className="font-vietnam py-10 lg:py-10">
+    <Section className="py-10 font-vietnam lg:py-10">
       <h2 className="mb-6 text-4xl font-semibold text-woodsmoke-50">
         Selected Works
       </h2>
@@ -13,7 +13,7 @@ const Works = () => {
           imageName="Skentino Tech Image"
           title="My Works at SkentinoTech"
           role="UI Designer + Frontend"
-          link="/works/skentino-tech"
+          link="#"
         />
         <WorkCard
           imageUrl="/images/works/dishes-to-taste/thumbnail.png"
@@ -27,7 +27,7 @@ const Works = () => {
           imageName="StickyHue Image"
           title="StickyHue - A Vibrant Notes App"
           role="Frontend"
-          link="/works/stickyhue"
+          link="/works/sticky-hue"
         />
       </div>
     </Section>
