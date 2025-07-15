@@ -38,7 +38,7 @@ const Navbar = () => {
   };
   const isActive = (path) => pathname === path;
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 px-4 py-4 font-apfelGrotezk text-woodsmoke-100 backdrop-blur-md md:px-20 lg:px-60">
+    <nav className="fixed left-0 right-0 top-0 z-50 px-4 py-4 font-vietnam text-woodsmoke-100 backdrop-blur-md md:px-20 lg:px-60">
       <div className="flex justify-between">
         <Link
           href="/"
