@@ -58,7 +58,7 @@ const Hero = () => {
         </p>
         <Button variant="secondary" asChild>
           <Link
-            href="https://drive.google.com/file/d/1borvlM7pbRlycGLaS9WfwchxIUSSHa_a/view"
+            href="https://drive.google.com/file/d/1Ox1lquPWVkcDI6cLv2i029BZ9JnBRJOS/view?usp=drivesdk"
             target="blank"
           >
             Resume
