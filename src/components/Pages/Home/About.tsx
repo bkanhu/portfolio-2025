@@ -3,26 +3,29 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import Link from "next/link";
 
-const Hero = () => {
+const About = () => {
   return (
-    <Section className="my-20 mb-28 font-vietnam md:px-[50px] lg:px-[258px]">
-      <div className="my-8 text-center">
+    <Section className="my-20 mb-28 flex w-full flex-col flex-wrap space-y-6 font-vietnam md:flex-row md:flex-nowrap md:items-start md:justify-between md:space-y-0">
+      <div className="basis-4/12">
         <h1 className="mb-2 text-3xl text-woodsmoke-50">About 🧔🏽</h1>
         <p className="text-woodsmoke-100">A little bit about me</p>
       </div>
 
-      <div className="space-y-5 font-normal text-woodsmoke-200">
+      <div className="basis-8/12 space-y-5 font-normal text-woodsmoke-300">
         <h4 className="font-medium">Hey again 👋</h4>
         <p>
           I&#39;m <span className="font-medium">B Kanhu Charan</span>, a
           Frontend Developer by profession.
         </p>
 
-        <p>
-          I believe a product should effectively, efficiently, and beautifully
-          solve the problem it promises to address. That&apos;s why I enjoy
-          working on both the design and development aspects of the product
-          development lifecycle.
+        <p className="mb-6 font-normal">
+          I believe,{" "}
+          <span className="font-medium text-woodsmoke-100">
+            a product should effectively, efficiently, and beautifully solve the
+            problem it promises to address.
+          </span>
+          That&apos;s why I enjoy working on both the design and development
+          aspects of the product development lifecycle.
         </p>
         <p>
           On the professional front, I have worked with various small-scale
@@ -70,4 +73,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default About;

@@ -31,8 +31,47 @@ const Footer = () => {
 
   return (
     <>
-      <Section className="py-8 font-vietnam" id="contact">
-        <div className="space-y-6">
+      <Section
+        className="flex w-full flex-col flex-wrap gap-4 space-y-6 py-8 font-vietnam md:flex-row md:flex-nowrap md:items-start md:justify-between md:space-y-0"
+        id="contact"
+      >
+        <div className="basis-6/12 space-y-6">
+          <h2 className="mb-6 text-4xl font-semibold text-woodsmoke-50">
+            Get in touch
+          </h2>
+          <p className="w-full text-woodsmoke-300 md:w-9/12">
+            Do you have an Exciting project for me?{" "}
+            <Link
+              href="#contact"
+              aria-label="Link to Contact Section"
+              className="text-woodsmoke-50 underline underline-offset-4"
+            >
+              Send an E-mail
+            </Link>
+            . Or want to have a general conversation? Feel Free to send a
+            message on{" "}
+            <Link
+              href="https://x.com/bkanhu7"
+              aria-label="Link to Twitter Page"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-woodsmoke-50 underline underline-offset-4"
+            >
+              Twitter
+            </Link>
+            .
+          </p>
+        </div>
+        <div className="basis-6/12 space-y-6 py-8">
+          <p className="text-woodsmoke-300">Drop an e-mail</p>
+          <a
+            href="mailto:iamkanhuc@gmail.com"
+            alt="link to email"
+            className="group relative inline-block text-3xl font-bold text-woodsmoke-100 hover:text-brand-500 md:text-5xl"
+          >
+            iamkanhuc@gmail.com
+            <span className="absolute -bottom-6 left-0 block h-1 w-0 bg-brand-500 transition-all duration-200 group-hover:w-full"></span>
+          </a>
           <p className="capitalize text-woodsmoke-300">Find me on</p>
           <ul className="flex gap-4">
             {SocialMedia.map((social, index) => (
@@ -50,17 +89,6 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="space-y-6 py-8">
-          <p className="text-woodsmoke-300">Or Else, say hi.</p>
-          <a
-            href="mailto:iamkanhuc@gmail.com"
-            alt="link to email"
-            className="group relative inline-block text-3xl font-bold text-woodsmoke-100 hover:text-brand-500 md:text-5xl"
-          >
-            iamkanhuc@gmail.com
-            <span className="absolute -bottom-6 left-0 block h-1 w-0 bg-brand-500 transition-all duration-200 group-hover:w-full"></span>
-          </a>
         </div>
       </Section>
       <footer className="px-4 py-8 font-apfelGrotezk text-base text-woodsmoke-300 md:px-20 md:text-sm lg:px-40">

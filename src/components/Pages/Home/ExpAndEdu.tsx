@@ -1,5 +1,5 @@
 import Section from "@/components/GlobalLayout/Section";
-import OrganisationCard from "@/components/Pages/About/OrganisationCard";
+import OrganisationCard from "@/components/Pages/Home/OrganisationCard";
 
 const toolsNSkills = {
   programming: [
@@ -17,7 +17,7 @@ const toolsNSkills = {
 const ExpAndEdu = () => {
   return (
     <>
-      <Section className="font-vietnam md:px-[50px] lg:px-[258px]">
+      <Section className="font-vietnam">
         <div className="flex w-full flex-col flex-wrap space-y-6 md:flex-row md:flex-nowrap md:space-y-0">
           <div className="basis-4/12">
             <h2 className="text-2xl text-woodsmoke-50">Experience</h2>
@@ -47,7 +47,7 @@ const ExpAndEdu = () => {
           </div>
         </div>
       </Section>
-      <Section className="my-8 md:px-[50px] lg:px-[258px]">
+      <Section className="my-8">
         <div className="flex w-full flex-col flex-wrap space-y-6 md:flex-row md:flex-nowrap md:space-y-0">
           <div className="basis-4/12">
             <h2 className="text-2xl text-woodsmoke-50">Academics</h2>
@@ -68,7 +68,7 @@ const ExpAndEdu = () => {
           </div>
         </div>
       </Section>
-      <Section className="my-8 md:px-[50px] lg:px-[258px]">
+      <Section className="my-8">
         <div className="flex w-full flex-col flex-wrap space-y-6 md:flex-row md:flex-nowrap md:space-y-0">
           <div className="basis-4/12">
             <h2 className="text-2xl text-woodsmoke-50">Tools &amp; Skills</h2>

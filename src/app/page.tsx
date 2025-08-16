@@ -1,5 +1,6 @@
+import About from "@/components/Pages/Home/About";
+import ExpAndEdu from "@/components/Pages/Home/ExpAndEdu";
 import Hero from "@/components/Pages/Home/Hero";
-import Philosophy from "@/components/Pages/Home/Philosophy";
 import Works from "@/components/Pages/Home/Works";
 
 export const metadata = {
@@ -12,7 +13,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <Philosophy />
+      <About />
+      <ExpAndEdu />
       <Works />
     </>
   );
