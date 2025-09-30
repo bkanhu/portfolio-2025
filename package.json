@@ -32,6 +32,7 @@
     "react-dom": "^19.0.0",
     "rehype-highlight": "^7.0.1",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "sugar-high": "^0.7.5",
     "tailwind-highlightjs": "^2.0.1",

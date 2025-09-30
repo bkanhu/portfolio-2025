@@ -2,29 +2,30 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import remarkGfm from "remark-gfm";
 import { highlight } from "sugar-high";
 
-function Table({ data }) {
-  const headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  const rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
+// function Table({ data }) {
+//   const headers = data.headers.map((header, index) => (
+//     <th key={index}>{header}</th>
+//   ));
+//   const rows = data.rows.map((row, index) => (
+//     <tr key={index}>
+//       {row.map((cell, cellIndex) => (
+//         <td key={cellIndex}>{cell}</td>
+//       ))}
+//     </tr>
+//   ));
 
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
-}
+//   return (
+//     <table className="my-4 w-full border-collapse">
+//       <thead className="border px-4 py-2">
+//         <tr className="border px-4 py-2">{headers}</tr>
+//       </thead>
+//       <tbody>{rows}</tbody>
+//     </table>
+//   );
+// }
 
 function CustomLink(props) {
   const href = props.href;
@@ -140,7 +141,15 @@ const components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
-  Table,
+  table: (props) => (
+    <table className="my-4 w-full border-collapse" {...props} />
+  ),
+  th: (props) => (
+    <th className="border px-4 py-2 text-woodsmoke-50" {...props} />
+  ),
+  td: (props) => (
+    <td className="border px-4 py-2 text-woodsmoke-300" {...props} />
+  ),
 };
 
 export function CustomMDX(props) {
@@ -148,6 +157,12 @@ export function CustomMDX(props) {
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
+      options={{
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          rehypePlugins: [],
+        },
+      }}
     />
   );
 }

@@ -1,0 +1,63 @@
+---
+title: "What is TDD?"
+publishedAt: "2025-02-18"
+summary: "Test-Driven Development! What's that?"
+---
+
+TDD = Test-Driven Development.
+
+The jargon really means one thing, i.e. write tests before writing implementation. It’s about testing the behaviour, not the code itself.
+
+## Real Life Example: Testing a `ProductCard` Component in an E-Commerce App
+
+Let’s say we’re building an e-commerce platform. One of the core UI components is the `ProductCard`, which displays essential product details like:
+
+- Product image
+- Product title
+- Product category
+- Product price
+- Product rating
+- “Add to Cart” button
+
+To ensure this component behaves as expected, we write a test that ensure the presence of all these elements. The test will pass if all the expected data points are rendered correctly.
+
+## What Happens When the UI Changes?
+
+Let's imagine a scenario that often happens in development:
+
+A new developer joins your team and is assigned the task to redesign the storefront. And when updating, the developer mistakenly removes the rating display. And push the changes. Before merging, the CI(Continuous Integration) pipeline will build and test the project, since we wrote a test earlier which expects a rating to be displayed in the ProductCard component, not the test case will fail.
+
+So we have 2 options now:
+
+- Remove the test case for the Rating check in the ProductCard component because the new redesign does not require it now.
+- If the rating was removed from the ProductCard mistakenly, fix the component.
+
+## Why This Matters
+
+Mostly writing test is a checkpoint. Its allow you to decide whether the change was meant to happen or not.
+
+## What Kind of Things Should You Test?
+
+| Area              | Examples                                             | Type            |
+| ----------------- | ---------------------------------------------------- | --------------- |
+| Logic/Utils       | `addToCart`, `calculateTotal`, filtering, pagination | Unit Tests      |
+| UI Components     | ProductCard, Cart, Filters, Pagination, Forms        | Component Tests |
+| User Interactions | Click “Add to Cart”, filter products, submit form    | Component Tests |
+| Core App Flows    | Browse → Add to Cart → Checkout → Payment            | E2E Tests       |
+| Auth & Forms      | Signup/Login, contact form validation + submission   | E2E + Component |
+
+## Mindset when building a feature:
+
+1. Define the expected user behavior.
+2. Write a failing test that reflects that behavior.
+3. Write just enough code to pass the test.
+4. Refactor if required.
+5. Repeat the process.
+
+## TLDR;
+
+- Focus on user-visible behavior and business-critical flows
+- Don’t test what you don’t control (e.g., external libraries)
+- Unit (Pure logic & functions)
+- Component (UI + interactions)
+- E2E (Critical flows: checkout, login, etc.)

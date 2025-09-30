@@ -1,4 +1,5 @@
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export function BlogPosts() {
@@ -14,22 +15,29 @@ export function BlogPosts() {
           );
         })
         .map((post) => (
-          <article key={post?.slug} className="mb-6">
-            <div className="flex w-full flex-col space-x-0 md:flex-row md:space-x-2">
+          <article key={post?.slug} className="mb-8">
+            <div className="flex w-full flex-col space-x-0 md:flex-row md:items-start md:justify-start md:space-x-2">
               <time
                 dateTime={post?.metadata.publishedAt}
-                className="w-[150px] tabular-nums text-woodsmoke-200"
+                className="w-[200px] text-sm tabular-nums text-woodsmoke-300"
               >
                 {formatDate(post?.metadata.publishedAt, false)}
               </time>
-              <h3 className="w-full tracking-tight text-woodsmoke-100">
-                <Link
-                  href={`/blog/${post?.slug}`}
-                  className="w-full py-4 hover:underline"
+              <Link
+                href={`/blog/${post?.slug}`}
+                className="flex w-full flex-col hover:underline"
+              >
+                <h3
+                  className={cn(
+                    "w-full text-lg tracking-tight text-woodsmoke-50"
+                  )}
                 >
                   {post?.metadata?.title}
-                </Link>
-              </h3>
+                </h3>
+                <p className={cn("text-woodsmoke-300")}>
+                  {post?.metadata?.summary}
+                </p>
+              </Link>
             </div>
           </article>
         ))}

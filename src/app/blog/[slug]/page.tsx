@@ -31,10 +31,10 @@ export async function generateMetadata({ params }) {
   const ogImage = image || `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
-    title,
+    title: `${title} | B Kanhu`,
     description,
     openGraph: {
-      title,
+      title: `${title} | B Kanhu`,
       description,
       type: "article",
       publishedTime,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${title} | B Kanhu`,
       description,
       images: [ogImage],
     },
@@ -91,7 +91,7 @@ export default async function Blog({ params }) {
               url: `${baseUrl}/blog/${post.slug}`,
               author: {
                 "@type": "Person",
-                name: "My Portfolio",
+                name: "B Kanhu Charan",
               },
             }),
           }}

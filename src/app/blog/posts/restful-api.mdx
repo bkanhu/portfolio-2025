@@ -1,0 +1,43 @@
+---
+title: "RESTful APIs"
+publishedAt: "2023-12-10"
+summary: "What is RESTful APIs?"
+---
+
+REST = Representational State Transfer.
+
+In a standard `Client - Server` architecture, `Client` send an request, `Server` sends an response. The response that the server send is in some form of representation. More often we see, `JSON` as the representation.
+
+Everything in REST is a resource. Here resource means, an Entity in your system. For example, if you're building an Library Management System, the Books, the Students are resources.
+
+REST is actually a specification on how Client should ask for things from Server and how Server should respond. It does not forces us to use a specific technology. It just suggest this is the way to do it.
+Let say you're building a Student Management System, here Student and Books are resources. Which we're exposing through HTTP endpoints. But the way student is stored in the DB is up to the developer, REST cannot enforce how you can store information on the database.
+
+**Difference Between HTTP endpoints and REST endpoints**
+
+All REST endpoints are HTTP endpoints, but not all HTTP endpoints are REST endpoints.
+
+**HTTP endpoints**
+
+- HTTP endpoints are general points of interaction over the HTTP protocol. They can serve any kind of functionality, such as retrieving web pages, submitting forms, or handling file uploads.
+- Don't have any specific architectural style or constraints.
+- These are simple URLs that perform various actions depending on the method used (GET, POST, PUT, DELETE, etc.).
+
+**REST endpoints**
+
+- REST endpoints are a specific type of HTTP endpoint that adhere to the principles of REST architecture.
+- It has standardized way to interact with resources, typically through standard HTTP methods like GET, POST, PUT, and DELETE.
+
+In the Library management system, a endpoint to create student in both HTTP and REST:
+
+- `/create-student` : This will create a new student with POST method.
+- `POST /student`: This is REST way of doing it.
+
+Similarly, to view an student details of `_id = 1`
+
+- `/view-students`: Student id will be passed in body and create the response and send to client.
+- `GET /students/1`: REST way of doing it. Here the Resource is mentioned in the endpoints itself.
+
+**Resources:**
+
+- [Arpit Bhayani - Youtube](https://www.youtube.com/watch?v=uFGJVQvR59A)
