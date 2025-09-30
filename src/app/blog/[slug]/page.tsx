@@ -1,13 +1,14 @@
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import { baseUrl } from "@/app/sitemap";
-import BackButton from "@/components/BackButton";
-import { CustomMDX } from "@/components/mdx";
+import BackButton from "@/components/Pages/Blogs/BackButton";
+import { CustomMDX } from "@/components/Pages/Blogs/mdx";
+import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const posts = getBlogPosts();
+  const posts = await getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -15,7 +16,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const slug = await params.slug;
+  const slug = params.slug;
   const post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
@@ -27,9 +28,7 @@ export async function generateMetadata({ params }) {
     summary: description,
     image,
   } = post.metadata;
-  const ogImage = image
-    ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = image || `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -56,7 +55,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Blog({ params }) {
-  const slug = await params.slug;
+  const slug = await params?.slug;
   const post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
@@ -66,7 +65,11 @@ export default async function Blog({ params }) {
   return (
     <>
       <header className="mt-24 px-4 md:px-20 lg:px-56">
-        <BackButton className="flex items-center justify-center gap-2 font-vietnam">
+        <BackButton
+          className={cn(
+            "font-vietnam, flex items-center justify-center gap-2 text-woodsmoke-50"
+          )}
+        >
           <ChevronLeft /> Back
         </BackButton>
       </header>

@@ -77,7 +77,7 @@
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-4 text-woodsmoke-300;
 }
 
 .prose h1 {
@@ -101,11 +101,11 @@
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-6 text-woodsmoke-300;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 text-woodsmoke-300;
 }
 
 .prose > :first-child {

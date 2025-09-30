@@ -1,5 +1,5 @@
 import Section from "@/components/GlobalLayout/Section";
-import { BlogPosts } from "@/components/posts";
+import { BlogPosts } from "@/components/Pages/Blogs/posts";
 
 export const metadata = {
   title: "Blog",
@@ -12,7 +12,6 @@ export default function Page() {
       <h1 className="mb-8 font-vietnam text-2xl font-semibold tracking-tighter text-woodsmoke-50">
         My Blog
       </h1>
-
       <BlogPosts />
     </Section>
   );
