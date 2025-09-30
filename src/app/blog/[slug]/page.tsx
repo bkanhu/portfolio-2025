@@ -66,11 +66,11 @@ export default async function Blog({ params }) {
   return (
     <>
       <header className="mt-24 px-4 md:px-20 lg:px-56">
-        <BackButton className="flex items-center justify-center gap-2 font-apfelGrotezk">
+        <BackButton className="flex items-center justify-center gap-2 font-vietnam">
           <ChevronLeft /> Back
         </BackButton>
       </header>
-      <section className="px-4 font-apfelGrotezk md:px-20 lg:px-56">
+      <section className="px-4 font-vietnam md:px-20 lg:px-56">
         <script
           type="application/ld+json"
           suppressHydrationWarning

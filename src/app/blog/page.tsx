@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <Section className="py-24 font-apfelGrotezk">
-      <h1 className="mb-8 font-inter text-2xl font-semibold tracking-tighter text-woodsmoke-50">
+    <Section className="py-24 font-vietnam">
+      <h1 className="mb-8 font-vietnam text-2xl font-semibold tracking-tighter text-woodsmoke-50">
         My Blog
       </h1>
 

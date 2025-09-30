@@ -1,27 +1,14 @@
-import type { Metadata } from "next";
-import { Be_Vietnam_Pro, Inter } from "next/font/google";
-import localFont from "next/font/local";
-
 import Footer from "@/components/GlobalLayout/Footer";
 import Navbar from "@/components/GlobalLayout/Navbar";
+import type { Metadata } from "next";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 const vietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-vietnam",
-});
-
-const apfelGrotezk = localFont({
-  src: "../../public/fonts/ApfelGrotezk-Regular.woff",
-  variable: "--font-apfelGrotezk",
 });
 
 export const metadata: Metadata = {
@@ -34,11 +21,11 @@ export const metadata: Metadata = {
     title: "B Kanhu | Frontend Developer",
     description:
       "Crafting high-performance, scalable web applications with React.js, Next.js, and modern web technologies.",
-    url: "https://bkanhu.netlify.app", // Update with your actual website URL
+    url: "https://bkanhu.netlify.app",
     siteName: "B Kanhu | Portfolio",
     images: [
       {
-        url: "https://bkanhu.netlify.app/og-image.jpg", // Update with your Open Graph image URL
+        url: "https://bkanhu.netlify.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "B Kanhu - Frontend Developer",
@@ -50,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "B Kanhu | Frontend Developer & UI Engineer",
     description: "Specialized in React.js, Next.js, and UI/UX development.",
-    images: ["https://bkanhu.netlify.app/og-image.jpg"], // Same as Open Graph image
+    images: ["https://bkanhu.netlify.app/og-image.jpg"],
   },
 };
 
@@ -98,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${apfelGrotezk.variable} ${vietnamPro.variable} scroll-smooth bg-woodsmoke-950 antialiased`}
+        className={`${vietnamPro.variable} scroll-smooth bg-woodsmoke-950 antialiased`}
       >
         <Navbar />
         {children}

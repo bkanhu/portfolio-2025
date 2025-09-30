@@ -78,7 +78,6 @@ export default {
         },
       },
       fontFamily: {
-        apfelGrotezk: ["var(--font-apfelGrotezk)"],
         inter: ["var(--font-inter)"],
         vietnam: ["var(--font-vietnam)"],
       },

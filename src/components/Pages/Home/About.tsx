@@ -5,7 +5,10 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <Section className="my-20 mb-28 flex w-full flex-col flex-wrap space-y-6 font-vietnam md:flex-row md:flex-nowrap md:items-start md:justify-between md:space-y-0">
+    <Section
+      className="my-20 mb-28 flex w-full flex-col flex-wrap space-y-6 font-vietnam md:flex-row md:flex-nowrap md:items-start md:justify-between md:space-y-0"
+      id="about"
+    >
       <div className="basis-4/12">
         <h1 className="mb-2 text-3xl text-woodsmoke-50">About 🧔🏽</h1>
         <p className="text-woodsmoke-100">A little bit about me</p>
@@ -33,8 +36,9 @@ const About = () => {
           I&apos;m working at SkentinoTech to take that one step further.
         </p>
         <p>
-          On the personal side of things, I love to spend time geeking around
-          computers, wondering on google maps, or brewing a nice cup of coffee.
+          Outside of work, I enjoy designing and fine-tuning computer setups.
+          When I&apos;m not doing that, I&apos;m usually aimlessly browsing
+          Google Maps or brewing a cup of coffee.
         </p>
 
         <p>

@@ -91,7 +91,7 @@ const Footer = () => {
           </ul>
         </div>
       </Section>
-      <footer className="px-4 py-8 font-apfelGrotezk text-base text-woodsmoke-300 md:px-20 md:text-sm lg:px-40">
+      <footer className="mx-auto max-w-7xl px-4 py-8 font-vietnam text-base text-woodsmoke-300 md:px-20 md:text-sm lg:px-40">
         <div className="flex flex-col items-start justify-between gap-y-12 border-b border-woodsmoke-900 pb-8 md:flex-row md:gap-y-0">
           <div>
             <Link
@@ -113,7 +113,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href=".#about"
                   alt="About"
                   className="hover:text-brand-500"
                 >

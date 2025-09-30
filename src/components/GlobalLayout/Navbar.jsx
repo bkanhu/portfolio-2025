@@ -2,7 +2,6 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -40,14 +39,13 @@ const Navbar = () => {
   const isActive = (path) => pathname === path;
   return (
     <FadeDown>
-      <nav className="fixed left-0 right-0 top-0 z-50 px-4 py-4 font-vietnam text-woodsmoke-100 backdrop-blur-md md:px-20 lg:px-60">
+      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto max-w-7xl px-4 py-4 font-vietnam text-woodsmoke-100 backdrop-blur-md md:px-20 lg:px-40">
         <div className="flex justify-between">
           <Link
             href="/"
             alt="Link to Home page"
             className="flex items-center gap-4"
           >
-            <Image src="/profile-pic.png" alt="Logo" width={30} height={30} />
             <span className="">B Kanhu</span>
           </Link>
           <div className="hidden lg:block">

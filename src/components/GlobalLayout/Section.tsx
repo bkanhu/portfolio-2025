@@ -1,14 +1,20 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 type SectionProps = {
-  className?: string;
   children: ReactNode;
-};
+} & HTMLAttributes<HTMLElement>;
 
-const Section = ({ className, children }: SectionProps) => {
+const Section = ({ className, children, ...props }: SectionProps) => {
   return (
-    <section className={cn("mx-auto px-4 md:px-20 lg:px-40", className)}>
+    <section
+      className={cn(
+        "scroll-mt-20",
+        "mx-auto max-w-7xl px-4 md:px-20 lg:px-40",
+        className
+      )}
+      {...props}
+    >
       {children}
     </section>
   );
