@@ -1,0 +1,59 @@
+---
+title: "Moving to `pnpm`"
+publishedAt: "2025-02-05"
+summary: "I’m a little late to the pnpm party. Okay, a lot late. But hey, I finally made the leap!"
+---
+
+I’m a little late to the `pnpm` party. Okay, a lot late. But hey, I finally made the leap! Here why i moved from `npm` and you should if you haven't already (no judgment 😜).
+
+But first, What is a Package Manager?
+
+Package manager helps you:
+
+1. Download and install packages (dependencies).
+2. Resolve and manage versions.
+3. Link dependencies efficiently.
+4. Run scripts and tools defined in your project (via `package.json`).
+
+How dependencies are stored?
+| Feature | npm | pnpm |
+| ----------------- | ------------------------------- | ---------------------------------------- |
+| Storage Model | Flat `node_modules` structure | Hard links from a global store |
+| Disk Usage | Duplicates packages per project | Shares packages globally across projects |
+| Speed | Slower for large deps | Much faster (due to caching + linking) |
+| Determinism | Improved with npm v9+ | Highly deterministic out of the box |
+| Installation Time | Slower | Faster (parallel + efficient linking) |
+
+## Switching from `npm` to `pnpm` in an Existing Project
+
+1. Install `pnpm` globally:
+
+```bash
+npm install -g pnpm
+```
+
+2. Remove `node_modules` and `lockfile` from your existing repositoiry:
+
+```bash
+rm -rf node_modules package-lock.json
+```
+
+3. Install dependencies using `pnpm`:
+
+```bash
+   pnpm install
+```
+
+4. update your `engines` field in `package.json`:
+
+```json
+"engines": {
+  "node": ">=22.20.0",
+  "pnpm": ">=10.18.0"
+}
+```
+
+## Why Use `pnpm` Over `npm`?
+
+- `pnpm` installs every unique version of a package once globally, then hard-links it into your project.
+- So if 10 projects use `react@18.2.0`, it's stored once, used many times.
