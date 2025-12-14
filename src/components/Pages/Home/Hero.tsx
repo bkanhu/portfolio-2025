@@ -31,8 +31,7 @@ const Hero = () => {
           </FadeUp>
           <FadeUp delay={0.7}>
             <p className="my-6 text-lg font-normal text-woodsmoke-300">
-              I craft joyful digital experiences. Currently working at
-              SkentinoTech.
+              I craft joyful digital experiences. Previously at SkentinoTech.
             </p>
           </FadeUp>
         </div>

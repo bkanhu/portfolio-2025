@@ -1,19 +1,44 @@
+import {
+  Figma,
+  FileTypeReactjs,
+  FileTypeScss2,
+  Git,
+  GithubAction,
+  GithubSolid,
+  Mongodb,
+  Nextjs,
+  Tailwindcss,
+  Typescript,
+} from "@/components/GlobalLayout/Icons";
 import Section from "@/components/GlobalLayout/Section";
 import OrganisationCard from "@/components/Pages/Home/OrganisationCard";
 
 const toolsNSkills = {
   programming: [
-    "React JS",
-    "Next JS",
-    "Tailwind CSS",
-    "SCSS",
-    "HTML5 & CSS3",
-    "Javascript",
-    "Bootstrap",
+    { label: "React JS", icon: <FileTypeReactjs /> },
+    { label: "Next JS", icon: <Nextjs /> },
+    { label: "Typescript", icon: <Typescript /> },
+    { label: "Tailwind CSS", icon: <Tailwindcss /> },
+    { label: "SCSS", icon: <FileTypeScss2 /> },
+    { label: "HTML5 & CSS3", icon: null },
+    // { label: "Javascript", icon: <Javascript /> },
+    { label: "Bootstrap", icon: null },
   ],
-  toolsAndSoftware: ["Figma", "VS Code", "Git", "Github", "Netlify"],
-  softSkills: ["Problem Solving", "Attention to detail"],
+  toolsAndSoftware: [
+    { label: "MongoDB", icon: <Mongodb /> },
+    { label: "Git", icon: <Git /> },
+    { label: "Github", icon: <GithubSolid /> },
+    { label: "Github Action", icon: <GithubAction /> },
+    { label: "Figma", icon: <Figma /> },
+    { label: "Digital Ocean", icon: null },
+    { label: "VS Code", icon: null },
+  ],
+  softSkills: [
+    { label: "Problem Solving", icon: null },
+    { label: "Attention to detail", icon: null },
+  ],
 };
+
 const ExpAndEdu = () => {
   return (
     <>
@@ -28,7 +53,7 @@ const ExpAndEdu = () => {
               RoleInOrganisation="Front-end Developer"
               EmploymentType="Full Time "
               OrganisationAddress="Bhubaneswar, Odisha"
-              YearInOrganisation="Aug 2023 - Present"
+              YearInOrganisation="Aug 2023 - Oct 2025"
             ></OrganisationCard>
             <OrganisationCard
               OrganisationName="Freelance"
@@ -77,27 +102,31 @@ const ExpAndEdu = () => {
             <h4 className="mb-3 text-xl font-medium text-woodsmoke-100">
               Language and Frameworks
             </h4>
-
-            {toolsNSkills.programming.map((data, index) => (
-              <span
-                className="mb-2 mr-2 inline-block rounded-full border border-woodsmoke-300 px-3 py-1 text-woodsmoke-100"
-                key={index}
-              >
-                {data}
-              </span>
-            ))}
+            <div className="grid sm:grid-cols-2 md:grid-cols-4">
+              {toolsNSkills.programming.map((data, index) => (
+                <span
+                  className="mb-2 mr-2 flex items-center justify-center gap-2 rounded-full border border-woodsmoke-300 px-3 py-1 text-woodsmoke-100"
+                  key={data?.label + index}
+                >
+                  {data?.icon}
+                  {data?.label}
+                </span>
+              ))}
+            </div>
             <h4 className="mb-3 mt-4 text-xl font-medium text-woodsmoke-100">
               Tools
             </h4>
-
-            {toolsNSkills.toolsAndSoftware.map((data, index) => (
-              <span
-                className="mb-2 mr-2 inline-block rounded-full border border-woodsmoke-300 px-3 py-1 text-woodsmoke-100"
-                key={index}
-              >
-                {data}
-              </span>
-            ))}
+            <div className="grid sm:grid-cols-2 md:grid-cols-4">
+              {toolsNSkills.toolsAndSoftware.map((data, index) => (
+                <span
+                  className="mb-2 mr-2 flex items-center justify-center gap-2 rounded-full border border-woodsmoke-300 px-3 py-1 text-woodsmoke-100"
+                  key={data?.label + index}
+                >
+                  {data?.icon}
+                  {data?.label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
