@@ -1,5 +1,6 @@
 import Section from "@/components/GlobalLayout/Section";
-import { BlogPosts } from "@/components/Pages/Blogs/posts";
+import { BlogList } from "@/components/Pages/Blogs/blog-list";
+import { getBlogPosts } from "./utils";
 
 export const metadata = {
   title: "Blog",
@@ -7,12 +8,15 @@ export const metadata = {
 };
 
 export default function Page() {
+  const posts = getBlogPosts();
+
   return (
     <Section className="py-24 font-vietnam">
       <h1 className="mb-8 font-vietnam text-2xl font-semibold tracking-tighter text-woodsmoke-50">
         My Blog
       </h1>
-      <BlogPosts />
+      
+      <BlogList posts={posts} />
     </Section>
   );
 }

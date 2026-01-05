@@ -6,15 +6,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const navLinks = [
+interface NavLink {
+  name: string;
+  path: string;
+}
+
+const navLinks: NavLink[] = [
   {
     name: "Home",
     path: "/",
   },
-  // {
-  //   name: "About",
-  //   path: "/about",
-  // },
   {
     name: "Works",
     path: "/works",
@@ -23,11 +24,8 @@ const navLinks = [
     name: "Blog",
     path: "/blog",
   },
-  // {
-  //   name: "More",
-  //   path: "/more",
-  // },
 ];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -35,13 +33,13 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setOpen(!open);
   };
-  const isActive = (path) => pathname === path;
+  const isActive = (path: string): boolean => pathname === path;
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 mx-auto max-w-7xl px-4 py-4 font-vietnam text-woodsmoke-100 backdrop-blur-md md:px-20 lg:px-40">
       <div className="flex justify-between">
         <Link
           href="/"
-          alt="Link to Home page"
+          aria-label="Navigate to home page"
           className="flex items-center gap-4"
         >
           <span className="">B Kanhu</span>
@@ -52,7 +50,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link.path}
-                  alt={link.name}
+                  aria-label={`Navigate to ${link.name}`}
                   className={cn(
                     "px-2 py-2 text-sm font-medium uppercase text-woodsmoke-300 hover:text-brand-500",
                     isActive(link.path) &&
@@ -67,8 +65,8 @@ const Navbar = () => {
         </div>
 
         <div className="block md:hidden">
-          <Sheet open={open} onOpenChange={toggleNavbar} className="bg-">
-            <SheetTrigger className="tetx-white">
+          <Sheet open={open} onOpenChange={toggleNavbar}>
+            <SheetTrigger className="text-white">
               <Menu />
             </SheetTrigger>
             <SheetContent className="border-woodsmoke-950 bg-woodsmoke-950 text-woodsmoke-50">
@@ -77,7 +75,7 @@ const Navbar = () => {
                   <li className="w-full" key={index}>
                     <Link
                       href={link.path}
-                      alt={link.name}
+                      aria-label={`Navigate to ${link.name}`}
                       className={cn(
                         "flex w-full px-2 py-2 text-sm font-medium uppercase text-woodsmoke-300 hover:text-brand-500",
                         isActive(link.path) &&

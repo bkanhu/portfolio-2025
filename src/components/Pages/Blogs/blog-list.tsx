@@ -1,13 +1,14 @@
-import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { formatDate } from "@/app/blog/utils";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export function BlogPosts() {
-  const allBlogs = getBlogPosts();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function BlogList({ posts }: { posts: any }) {
+  // const allBlogs = getBlogPosts();
 
   return (
     <>
-      {allBlogs
+      {posts
         .toSorted((a, b) => {
           return (
             new Date(b.metadata.publishedAt).getTime() -

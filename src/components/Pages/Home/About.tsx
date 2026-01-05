@@ -32,13 +32,15 @@ const About = () => {
         </p>
         <p>
           On the professional front, I have worked with various small-scale
-          businesses to help them grow with the help of technology. And now
-          I&apos;m working at SkentinoTech to take that one step further.
+          businesses to help them grow with the help of technology. Previously,
+          I worked at SkentinoTech, where I contributed to building scalable
+          web applications.
         </p>
         <p>
-          Outside of work, I enjoy designing and fine-tuning computer setups.
-          When I&apos;m not doing that, I&apos;m usually aimlessly browsing
-          Google Maps or brewing a cup of coffee.
+          Outside of work, I enjoy exploring new technologies and staying
+          up-to-date with the latest trends in web development. When I&apos;m
+          not coding, I&apos;m usually browsing through design inspirations or
+          enjoying a good cup of coffee.
         </p>
 
         <p>
@@ -65,8 +67,9 @@ const About = () => {
         </p>
         <Button variant="secondary" asChild>
           <Link
-            href="https://drive.google.com/file/d/1Ox1lquPWVkcDI6cLv2i029BZ9JnBRJOS/view?usp=drivesdk"
+            href="https://drive.google.com/file/d/1YNMBeYJtA1E4FiYWmbK-TpgucCRshQOv/view?usp=sharing"
             target="blank"
+            rel="noopener noreferrer"
           >
             Resume
             <Download />

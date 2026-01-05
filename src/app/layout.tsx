@@ -2,6 +2,7 @@ import Footer from "@/components/GlobalLayout/Footer";
 import Navbar from "@/components/GlobalLayout/Navbar";
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const vietnamPro = Be_Vietnam_Pro({
@@ -90,6 +91,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster position="bottom-right" theme="dark" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
