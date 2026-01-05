@@ -1,8 +1,6 @@
-import FadeDown from "@/components/animations/fade-down";
 import FadeUp from "@/components/animations/fade-up";
 import Section from "@/components/GlobalLayout/Section";
-import { Button } from "@/components/ui/button";
-import { ArrowBigDown, ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,13 +16,13 @@ const Hero = () => {
               height={100}
               width={100}
               priority={true}
-              className="mb-8 h-16 w-16 rounded-full object-cover border-2 border-brand-500"
+              className="mb-8 h-16 w-16 rounded-full border-2 border-brand-500 object-cover"
             />
           </FadeUp>
           <FadeUp delay={0.3}>
             <h1 className="w-auto text-5xl font-semibold leading-normal text-woodsmoke-50">
               Hello! I&apos;m{" "}
-              <span className="font-medium inline-block">B Kanhu Charan</span>
+              <span className="inline-block font-medium">B Kanhu Charan</span>
             </h1>
           </FadeUp>
         </div>
@@ -40,19 +38,27 @@ const Hero = () => {
             </p>
           </FadeUp>
           <FadeUp delay={0.9}>
-            <Link href="https://drive.google.com/file/d/1YNMBeYJtA1E4FiYWmbK-TpgucCRshQOv/view?usp=sharing"
-             aria-label="Link to Resume link" target="blank" rel="noopener noreferrer" className="flex items-center gap-2">
-            <span className="ease-in-out animate-pulse duration-900 h-2 w-2 bg-brand-500 p-2 rounded-full"></span>
-          <p className="text-woodsmoke-100">Open to new opportunities</p>
+            <Link
+              href="https://drive.google.com/file/d/1YNMBeYJtA1E4FiYWmbK-TpgucCRshQOv/view?usp=sharing"
+              aria-label="Link to Resume link"
+              target="blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <span className="duration-900 h-2 w-2 animate-pulse rounded-full bg-brand-500 p-2 ease-in-out"></span>
+              <p className="text-woodsmoke-100">Open to new opportunities</p>
             </Link>
           </FadeUp>
         </div>
       </div>
-     
+
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <p className="flex gap-2 items-center text-sm text-woodsmoke-100 animate-bounce duration-1000 ease-in-out"> <ArrowDown size={16}/>Scroll</p>
+        <p className="flex animate-bounce items-center gap-2 text-sm text-woodsmoke-100 duration-1000 ease-in-out">
+          {" "}
+          <ArrowDown size={16} />
+          Scroll
+        </p>
       </div>
-       
     </Section>
   );
 };

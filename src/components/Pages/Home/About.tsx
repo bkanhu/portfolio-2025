@@ -17,7 +17,8 @@ const About = () => {
       <div className="basis-8/12 space-y-5 font-normal text-woodsmoke-300">
         <h4 className="font-medium">Hey again 👋</h4>
         <p>
-          I&#39;m <span className="font-medium">B Kanhu Charan</span>, a MERN Stack Developer with a strong focus on Frontend development.
+          I&#39;m <span className="font-medium">B Kanhu Charan</span>, a MERN
+          Stack Developer with a strong focus on Frontend development.
         </p>
 
         <p className="mb-6 font-normal">
@@ -32,8 +33,8 @@ const About = () => {
         <p>
           On the professional front, I have worked with various small-scale
           businesses to help them grow with the help of technology. Previously,
-          I worked at SkentinoTech, where I contributed to building scalable
-          web applications.
+          I worked at SkentinoTech, where I contributed to building scalable web
+          applications.
         </p>
         <p>
           Outside of work, I enjoy exploring new technologies and staying
