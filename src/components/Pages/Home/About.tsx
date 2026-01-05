@@ -17,8 +17,7 @@ const About = () => {
       <div className="basis-8/12 space-y-5 font-normal text-woodsmoke-300">
         <h4 className="font-medium">Hey again 👋</h4>
         <p>
-          I&#39;m <span className="font-medium">B Kanhu Charan</span>, a
-          Frontend Developer by profession.
+          I&#39;m <span className="font-medium">B Kanhu Charan</span>, a MERN Stack Developer with a strong focus on Frontend development.
         </p>
 
         <p className="mb-6 font-normal">

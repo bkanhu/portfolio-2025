@@ -3,7 +3,7 @@ import WorkCard from "@/components/Pages/Works/WorkCard";
 
 const Works = () => {
   return (
-    <Section className="py-10 font-vietnam lg:py-10">
+    <Section className="scroll-mt-11 py-10 font-vietnam lg:py-10" id="works">
       <h2 className="mb-6 text-4xl font-semibold text-woodsmoke-50">
         Selected Works
       </h2>
