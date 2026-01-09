@@ -2,6 +2,7 @@ import Footer from "@/components/GlobalLayout/Footer";
 import Navbar from "@/components/GlobalLayout/Navbar";
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
+import Script from "next/script";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -85,6 +86,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-Q8E2GKYGVM`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q8E2GKYGVM ', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body
         className={`${vietnamPro.variable} scroll-smooth bg-woodsmoke-950 antialiased`}
       >
