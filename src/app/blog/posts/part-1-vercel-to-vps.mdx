@@ -1,0 +1,105 @@
+---
+title: "Part 1 - Vercel to VPS"
+publishedAt: "2026-01-17"
+summary: "Vercel, it feels like magic. But we're moving for the love of the game."
+---
+
+Vercel, it feels like magic.
+
+You push to Git, and suddenly your site is live and globally available. No servers. No configs. No stress.
+
+But at some point, you decided to move out of Vercel. Not because Vercel is bad or more pricey, but because production means more than “it works”.
+
+But first, **why move from a managed platform to a VPS?**
+
+Managed platforms like Vercel and Netlify manage all the behind infra setup, so developers can ship faster, but a VPS optimizes for control.
+
+Here are a few things that might trigger the shift:
+
+1. Cost:
+
+   Managed platforms are cheap at low traffic, and expensive at scale.
+
+   A VPS has a fixed monthly cost, regardless of traffic patterns.
+
+2. Infrastructure Control:
+
+   On managed platforms:
+   - You don’t control the server
+   - You don’t control process lifecycles
+   - You don’t control the network
+
+   On a VPS:
+   - You choose how requests flow
+   - You decide how apps restart
+   - You define how failures are handled
+
+All this is a fine reason. But we're moving for _the love of the game_. Game? yes to learn a thing or two about the production system.
+
+So **how the production setup is done in VPS?**
+
+A VPS-based production app usually follows this this request flow:
+
+`User → DNS → Nginx → Node / Next.js → PM2`
+
+User → DNS:
+
+When a user sends a request, the first stop is DNS (Domain Name System).
+
+DNS is responsible for:
+
+- Translates a domain name into an IP
+- Allows IPs to change without breaking users
+- Enables global routing and failover
+
+DNS → Nginx
+
+Once DNS resolves the domain, the request reaches your server and is handled by Nginx.
+
+Think of Nginx as the front door of your application.
+
+It handles:
+
+- Incoming HTTP/HTTPS traffic
+- TLS certificates (HTTPS)
+- Request routing
+- Rate limiting
+- Static asset delivery
+- Reverse proxying
+
+Nginx sits in front of your app to absorb traffic, handle networking efficiently, and protect your Node process from direct exposure.
+
+Nginx → Node / Next.js
+
+Nginx forwards the request to your Node.js / Next.js application via a reverse proxy.
+
+It handles:
+
+- Routing
+- Rendering
+- API logic
+- Data fetching
+- Authentication logic
+
+Node / Next.js → PM2
+
+Your application is managed by a process manager such as PM2.
+
+PM2 ensures that:
+
+- Your app restarts if it crashes
+- Multiple instances can run
+- Logs are captured
+- Memory leaks don’t silently kill production
+
+Without a process manager:
+
+- One crash = downtime
+- One uncaught exception = dead app
+
+TL;DR:
+
+- PM2 protects Node
+- Nginx protects your app
+- DNS protects your server
+- The VPS hosts them all
