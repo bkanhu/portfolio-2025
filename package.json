@@ -26,7 +26,7 @@
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.469.0",
     "motion": "^12.23.12",
-    "next": "^15.5.9",
+    "next": "^16.1.5",
     "next-mdx-remote": "^5.0.0",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "^19.0.0",
